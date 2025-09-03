@@ -41,6 +41,14 @@
 			<scope>test</scope>
 		</dependency>
 
+
+		<!-- Lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
 		<!-- Banco de dados (em memória, para testes locais) -->
 		<dependency>
 			<groupId>com.h2database</groupId>
