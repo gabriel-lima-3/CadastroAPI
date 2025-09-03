@@ -25,7 +25,7 @@ public class AlunosModel {
 
     // MUITO PARA UM (uma atividade para varios alunos)
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "missoes_id") // Foreing Key OU chave estrangeira
     private AtividadesModel atividades;
 
 
