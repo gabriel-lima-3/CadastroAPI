@@ -1,5 +1,4 @@
-package dev.gway.CadastroAPI.Ninjas.Controller;
-
+package dev.gway.CadastroAPI.Atividades;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,11 +6,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping
-public class AlunosController {
+public class AtividadesController {
 
-    @GetMapping("/boasVindas")
-    public String boasVindas() {
-        return "Essa e minha primeira mensagem nessa rota";
+    @GetMapping("/missaoDoDia")
+    public String missoesDoDia(){
+        return "A missoes de hoje";
     }
 
 

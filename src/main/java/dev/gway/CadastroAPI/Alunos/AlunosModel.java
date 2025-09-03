@@ -1,13 +1,12 @@
-package dev.gway.CadastroAPI.Ninjas.Controller;
+package dev.gway.CadastroAPI.Alunos;
 
 //Entity transforma uma classe em enitidade no banco de dados
 
-import dev.gway.CadastroAPI.Cursos.AtividadesModel;
+import dev.gway.CadastroAPI.Atividades.AtividadesModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 
 // JPA = jarkarta persistence API
 

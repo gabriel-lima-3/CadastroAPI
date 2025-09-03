@@ -1,6 +1,6 @@
-package dev.gway.CadastroAPI.Cursos;
+package dev.gway.CadastroAPI.Atividades;
 
-import dev.gway.CadastroAPI.Ninjas.Controller.AlunosModel;
+import dev.gway.CadastroAPI.Alunos.AlunosModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,7 +22,7 @@ public class AtividadesModel {
     private String titulo;
     private String status;
 
-
+    // Uma atividade pode ter varios alunoos
     @OneToMany(mappedBy = "atividades")
     private List<AlunosModel> alunos;
 
