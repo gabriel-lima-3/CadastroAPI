@@ -16,23 +16,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+
 public class AlunosModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+
+    @Column(unique = true)
     private String email;
+
     private int idade;
     private String curso;
-
 
     // Muitos para um (uma atividade para varios alunos)
     @ManyToOne
     @JoinColumn(name = "missoes_id") // Foreing Key OU chave estrangeira
     private AtividadesModel atividades;
-
-
-
 
 }
