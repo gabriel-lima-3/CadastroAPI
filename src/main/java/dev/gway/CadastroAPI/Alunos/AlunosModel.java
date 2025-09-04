@@ -21,13 +21,23 @@ public class AlunosModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "nome")
     private String nome;
 
     @Column(unique = true)
     private String email;
 
+    @Column(name = "idade")
     private int idade;
+
+    @Column(name = "curso")
     private String curso;
+
+    @Column(name = "imagem_url")
+    private String imagemUrl;
+
+
+
 
     // Muitos para um (uma atividade para varios alunos)
     @ManyToOne
