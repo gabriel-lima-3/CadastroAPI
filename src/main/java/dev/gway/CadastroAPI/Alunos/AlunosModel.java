@@ -36,9 +36,6 @@ public class AlunosModel {
     @Column(name = "imagem_url")
     private String imagemUrl;
 
-
-
-
     // Muitos para um (uma atividade para varios alunos)
     @ManyToOne
     @JoinColumn(name = "missoes_id") // Foreing Key OU chave estrangeira
