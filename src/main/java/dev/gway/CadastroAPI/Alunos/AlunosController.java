@@ -3,9 +3,17 @@ package dev.gway.CadastroAPI.Alunos;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/alunos")
 public class AlunosController {
+
+    private AlunosService alunosService;
+
+    public AlunosController(AlunosService alunosService) {
+       this.alunosService = alunosService;
+    }
 
     @GetMapping("/boasVindas")
     public String boasVindas() {
@@ -22,8 +30,8 @@ public class AlunosController {
 
     //Mostrar todos os Alunos (READ)
     @GetMapping("/listar")
-    public String mostrarTodosAlunos() {
-        return "Mostrar todos os alunos";
+    public List<AlunosModel> listarAlunos() {
+        return alunosService.listarAlunos();
     }
 
     //Procurar Aluno por id (READ)
