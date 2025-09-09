@@ -1,5 +1,6 @@
 package dev.gway.CadastroAPI.Atividades;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.gway.CadastroAPI.Alunos.AlunosModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,6 +25,7 @@ public class AtividadesModel {
 
     // Uma atividade pode ter varios alunoos
     @OneToMany(mappedBy = "atividades")
+    @JsonIgnore
     private List<AlunosModel> alunos;
 
 
