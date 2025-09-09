@@ -4,7 +4,7 @@ package dev.gway.CadastroAPI.Alunos;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/alunos")
 public class AlunosController {
 
     @GetMapping("/boasVindas")
@@ -21,13 +21,13 @@ public class AlunosController {
     }
 
     //Mostrar todos os Alunos (READ)
-    @GetMapping("/todos")
+    @GetMapping("/listar")
     public String mostrarTodosAlunos() {
         return "Mostrar todos os alunos";
     }
 
     //Procurar Aluno por id (READ)
-    @GetMapping("/porId")
+    @GetMapping("/listarId")
     public String mostrarAlunosPorId() {
         return "Mostrar  alunos por id";
     }
