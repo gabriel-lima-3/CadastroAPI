@@ -1,0 +1,113 @@
+[33mcommit f50cbfa8bd19207befca87f2b069e0df18822e31[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Wed Sep 10 15:17:34 2025 -0300
+
+    feat: Incluid a Rota de cadastro de Alunos usando Metodo Post
+
+[33mcommit 09bb5effbf4965f6ecaa49d06e7b2d6e0939515e[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Tue Sep 9 17:24:30 2025 -0300
+
+    feat: Alterar rota do Controller para listar os Alunso e injeta a dependencia do Service e do Repository
+
+[33mcommit a32f218d165cc3ea04c281528d75568581d1a8f4[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Tue Sep 9 17:23:08 2025 -0300
+
+    fix: Incluid a anotation JsonIgnore para previnir erro de serializacao
+
+[33mcommit 4e168e63bd34ded69fda936a07f0946d5829f3b4[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Tue Sep 9 16:33:34 2025 -0300
+
+    fix: Alterar o nome das rotas do Controller dos Alunos
+
+[33mcommit 7a78e135a27ed2b8346cf428f758c88209789b40[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Tue Sep 9 16:30:27 2025 -0300
+
+    feat: Cria as rotas do Controller com mock das Atividades
+
+[33mcommit 896142c7f8c5d22dd1d9887f76aaad6e4ce74865[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Tue Sep 9 16:16:02 2025 -0300
+
+    feat: Atualiza o Controller com Mock de dados
+
+[33mcommit 89bc401582944c62f6fd524d0ae654f03d5e2a34[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Tue Sep 9 15:36:52 2025 -0300
+
+    feat: Migrations para tb_cadastro incluindo a Column de Semestre
+
+[33mcommit 5c420158cdb81202dedd9125d42f9d6e3ca04efa[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Mon Sep 8 19:58:49 2025 -0300
+
+    chore: .gitgnore inclui o ./data
+
+[33mcommit 9272c5243267a667b8414c61ede705757430dc36[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Thu Sep 4 22:57:37 2025 -0300
+
+    build: Conecta o Banco de Dados H2 na minha aplicacao Spring
+
+[33mcommit 9ab7d71e01294978522ad247a0cbb495ce221b9a[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Thu Sep 4 22:54:08 2025 -0300
+
+    chore: .gitignore adiciona as minhas credencias do DB
+
+[33mcommit 00c560df99fff9c6bc7d63476bfe9ff9734fafe3[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Thu Sep 4 01:44:20 2025 -0300
+
+    fix: Adiciona o @Column na minha classe
+
+[33mcommit 138756d51dc136970dba60760ffc576a07a0e182[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Wed Sep 3 16:29:50 2025 -0300
+
+    feat: Coloca Repository e Service para as calasses Alunos e Atividades
+
+[33mcommit 662050b0cbc81a134a49f8c5fa412ff22e677e37[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Wed Sep 3 15:45:01 2025 -0300
+
+    fix: Coloca coluna de Email como Unique
+
+[33mcommit 7562415fb95f298b7f0e11c430ea4617f062e80f[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Wed Sep 3 15:38:43 2025 -0300
+
+    feat: Coloca o Lombok nas classes
+
+[33mcommit 3266145da51e1ffa93b0aecfcbdc3d7c7679e246[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Wed Sep 3 15:14:25 2025 -0300
+
+    Modelagem do Banco de Dados
+
+[33mcommit 6eb637a1cebc43766656b4b201ca3702fbb6a7fd[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Tue Sep 2 19:18:31 2025 -0300
+
+    Troca de eixo do projeto para Cadastro de alunos em uma Faculdade, adicionei Atividades Controller  e Model
+
+[33mcommit 7c6f61577b9bd6ee3175f3a26b474c635623d811[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Tue Sep 2 15:29:35 2025 -0300
+
+    Criar Entidade Cadastro para o abanco de dados
+
+[33mcommit f0262066ff446040cea47d5d204c4a1b11a137dd[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Mon Sep 1 20:54:44 2025 -0300
+
+    Controller adicionado
+
+[33mcommit 23bdc95bad6ae3f8461caacbf8ee9ae97b3d1d6e[m
+Author: Gabriel Lima <Gabriellimma00@gmail.com>
+Date:   Mon Sep 1 20:15:56 2025 -0300
+
+    Commit Inicial

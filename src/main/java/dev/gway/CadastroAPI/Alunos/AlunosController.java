@@ -3,6 +3,7 @@ package dev.gway.CadastroAPI.Alunos;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.file.Path;
 import java.util.List;
 
 @RestController
@@ -46,9 +47,11 @@ public class AlunosController {
         return "Alterar  alunos por id";
     }
 
+
     //Deletar Aluno (Delete)
-    @DeleteMapping("/deletarId")
-    public String deletarAlunosPorId() {
-        return "Retornar aluno deletado por id";
+    @DeleteMapping("/deletar/{id}")
+    public void deletarAlunosPorId(@PathVariable long id ) {
+       alunosService.deletarAlunoPorId(id);
     }
+
 }

@@ -10,10 +10,13 @@ import java.util.Optional;
 @Service
 public class AlunosService {
 
+
+    private final AlunosRepository alunosRepository;
     private AlunosRepository AlunoRepository;
 
-    public AlunosService(AlunosRepository alunoRepository) {
+    public AlunosService(AlunosRepository alunoRepository, AlunosRepository alunosRepository) {
         AlunoRepository = alunoRepository;
+        this.alunosRepository = alunosRepository;
     }
 
     //Listar todos os meus alunos
@@ -32,9 +35,12 @@ public class AlunosService {
 
     }
 
+    //Deletar Aluno por Id  // Tem que ser um metodo void (Nao precisa retornar nada)
+
+    public void deletarAlunoPorId(long id){
+        alunosRepository.deleteById(id);
 
 
-
-
+    }
 
 }

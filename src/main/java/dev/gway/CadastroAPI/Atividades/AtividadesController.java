@@ -2,36 +2,40 @@ package dev.gway.CadastroAPI.Atividades;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("atividades")
+@RequestMapping("/atividades")
 public class AtividadesController {
 
-// Get - Mandar requisição para mostrar as atividades
-    @GetMapping("/listar")
-    public String listar(){
-        return "Ativades listada com sucesso";
+    private AtividadesService atividadesService;
+
+    public AtividadesController(AtividadesService atividadesService) {
+        this.atividadesService = atividadesService;
     }
+    //Crud
 
-
-// Post - Mandar uma requisição para criar atividades
     @PostMapping("/criar")
-    public String criarAtividade(){
+    public AtividadesModel criarAtividade(@RequestBody AtividadesModel atividades){
+        return atividadesService.criarAtividade(atividades);
 
-        return "Atividade criada com sucesso";
-    }
-// Put - Mandar requisição  para alterar a Atividade
-    @PutMapping("/alterar")
-    public String alterarAtividade(){
-        return "Atividade alterada com sucesso";
     }
 
-// Delete - Mandar requisição para deletar as Atividades
-    @DeleteMapping("/deletar")
-    public String deletarAtividade(){
-        return "Atividade deletada com sucesso";
+    //Listar todas as atividades
+
+    @GetMapping("/listar")
+    public List<AtividadesModel> listarAtividades(){
+        return atividadesService.listarAtividades();
     }
 
+    // TODO: Alterar dados
+    // TODO: Alterar dados
+    // TODO: Alterar dados
 
-
+    //Deletar atividade por id
+    @DeleteMapping("/deletar/{id}")
+    public void deletarAtividade(@PathVariable long id){
+        atividadesService.deletarAtividadePorId(id);
+    }
 
 }
