@@ -23,9 +23,9 @@ public class AlunosController {
     //CRUD ---------------------------------------
 
     // Adicionar Aluno (Create)
-    @PostMapping("/adicionar")
-    public String criarAluno() {
-        return "Ninja criado";
+    @PostMapping("/criar")
+    public AlunosModel criarAluno(@RequestBody AlunosModel alunos) {
+        return alunosService.criarAluno(alunos);
     }
 
     //Mostrar todos os Alunos (READ)
@@ -35,9 +35,9 @@ public class AlunosController {
     }
 
     //Procurar Aluno por id (READ)
-    @GetMapping("/listarId")
-    public String mostrarAlunosPorId() {
-        return "Mostrar  alunos por id";
+    @GetMapping("/listar/{id}")
+    public AlunosModel listarAlunoPorId(@PathVariable long id){
+        return alunosService.listarAlunoPorId(id);
     }
 
     //Alterar dado dos Alunos (Update)
