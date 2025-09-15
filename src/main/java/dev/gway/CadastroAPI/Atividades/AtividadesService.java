@@ -25,7 +25,7 @@ public class AtividadesService {
 
 
     //Listar Atividade por Id
-    public AtividadesModel criarAtividade(long id ){
+    public AtividadesModel listarAtividade(long id ){
 
         Optional<AtividadesModel> atividadesPorId = atividadesRepository.findById(id);
         return atividadesPorId.orElse(null);

@@ -35,6 +35,19 @@ public class AlunosService {
 
     }
 
+    //Atualizar dados do Aluno por Id
+
+    public AlunosModel UpdateAlunoPorId(long id, AlunosModel alunoAtualizado) {
+
+        if (alunosRepository.existsById(id)) {
+            alunoAtualizado.setId(id);
+            return alunosRepository.save(alunoAtualizado);
+         }
+        else{
+            return null;
+        }
+    }
+
     //Deletar Aluno por Id  // Tem que ser um metodo void (Nao precisa retornar nada)
 
     public void deletarAlunoPorId(long id){

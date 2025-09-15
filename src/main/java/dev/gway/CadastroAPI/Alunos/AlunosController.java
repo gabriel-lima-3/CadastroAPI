@@ -37,21 +37,19 @@ public class AlunosController {
 
     //Procurar Aluno por id (READ)
     @GetMapping("/listar/{id}")
-    public AlunosModel listarAlunoPorId(@PathVariable long id){
+    public AlunosModel listarAlunoPorId(@PathVariable long id) {
         return alunosService.listarAlunoPorId(id);
     }
 
     //Alterar dado dos Alunos (Update)
-    @PutMapping("/alterar")
-    public String alterarAlunoPorId() {
-        return "Alterar  alunos por id";
+    @PutMapping("/alterar/{id}")
+    public AlunosModel alterarAlunoPorId(@PathVariable long id, @RequestBody AlunosModel alunoAtualizado) {
+        return alunosService.UpdateAlunoPorId(id, alunoAtualizado);
     }
-
 
     //Deletar Aluno (Delete)
     @DeleteMapping("/deletar/{id}")
     public void deletarAlunosPorId(@PathVariable long id ) {
        alunosService.deletarAlunoPorId(id);
     }
-
 }

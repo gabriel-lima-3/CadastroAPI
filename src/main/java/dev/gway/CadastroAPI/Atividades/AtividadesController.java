@@ -3,15 +3,18 @@ package dev.gway.CadastroAPI.Atividades;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/atividades")
 public class AtividadesController {
 
+    private final AtividadesRepository atividadesRepository;
     private AtividadesService atividadesService;
 
-    public AtividadesController(AtividadesService atividadesService) {
+    public AtividadesController(AtividadesService atividadesService, AtividadesRepository atividadesRepository) {
         this.atividadesService = atividadesService;
+        this.atividadesRepository = atividadesRepository;
     }
     //Crud
 
@@ -26,6 +29,14 @@ public class AtividadesController {
     @GetMapping("/listar")
     public List<AtividadesModel> listarAtividades(){
         return atividadesService.listarAtividades();
+    }
+
+    //Listar atividade por ID
+
+    @GetMapping("/listar/{id}")
+    public AtividadesModel listarAtividadesPorId(@PathVariable long id ){
+        return atividadesService.listarAtividade(id);
+
     }
 
     // TODO: Alterar dados
