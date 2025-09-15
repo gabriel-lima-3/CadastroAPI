@@ -10,14 +10,15 @@ import java.util.Optional;
 @Service
 public class AlunosService {
 
-
+    private AlunosMapper alunosMapper;
     private final AlunosRepository alunosRepository;
     private AlunosRepository AlunoRepository;
 
-    public AlunosService(AlunosRepository alunoRepository, AlunosRepository alunosRepository) {
-        AlunoRepository = alunoRepository;
+    public AlunosService(AlunosRepository alunosRepository, AlunosRepository alunoRepository) {
         this.alunosRepository = alunosRepository;
+        AlunoRepository = alunoRepository;
     }
+
 
     //Listar todos os meus alunos
     public List<AlunosModel> listarAlunos(){
@@ -30,9 +31,10 @@ public class AlunosService {
 
     }
 
-    public AlunosModel criarAluno(AlunosModel alunos){
-        return AlunoRepository.save(alunos);
-
+    public AlunosDTO criarAluno(AlunosDTO alunosDTO){
+        AlunosModel alunos = new AlunosMapper().map(alunosDTO);
+        alunos = alunosRepository.save(alunos);
+        return alunosMapper.map(alunos);
     }
 
     //Atualizar dados do Aluno por Id
@@ -47,13 +49,10 @@ public class AlunosService {
             return null;
         }
     }
-
     //Deletar Aluno por Id  // Tem que ser um metodo void (Nao precisa retornar nada)
 
     public void deletarAlunoPorId(long id){
         alunosRepository.deleteById(id);
-
-
     }
 
 }

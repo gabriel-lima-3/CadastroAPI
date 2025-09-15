@@ -25,7 +25,7 @@ public class AlunosController {
 
     // Adicionar Aluno (Create)
     @PostMapping("/criar")
-    public AlunosModel criarAluno(@RequestBody AlunosModel alunos) {
+    public AlunosDTO criarAluno(@RequestBody AlunosDTO alunos) {
         return alunosService.criarAluno(alunos);
     }
 
@@ -52,4 +52,7 @@ public class AlunosController {
     public void deletarAlunosPorId(@PathVariable long id ) {
        alunosService.deletarAlunoPorId(id);
     }
+
+
+
 }
