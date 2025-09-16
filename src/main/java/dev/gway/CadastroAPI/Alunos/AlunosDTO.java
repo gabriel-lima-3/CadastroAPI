@@ -18,7 +18,6 @@ public class AlunosDTO {
     private String curso;
     private String imagemUrl;
     private AtividadesModel atividades;
-
     private String semestre;
 
 
