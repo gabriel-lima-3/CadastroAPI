@@ -1,50 +1,47 @@
 package dev.gway.CadastroAPI.Atividades;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Optional;
-
+import java.util.stream.Collectors;
 
 @Service
 public class AtividadesService {
 
-    private AtividadesRepository atividadesRepository;
+    private final AtividadesMapper atividadesMapper;
+    private final AtividadesRepository atividadesRepository;
 
-    public AtividadesService(AtividadesRepository atividadesRepository) {
+    @Autowired
+    public AtividadesService(AtividadesRepository atividadesRepository, AtividadesMapper atividadesMapper) {
         this.atividadesRepository = atividadesRepository;
+        this.atividadesMapper = atividadesMapper;
     }
 
-    // Listar todas as atividades
-    public List<AtividadesModel> listarAtividades(){
-        return atividadesRepository.findAll();
+    // Listar todas as atividades (DTO)
+    public List<AtividadesDTO> listarAtividades() {
+        List<AtividadesModel> atividades = atividadesRepository.findAll();
+        return atividades.stream()
+                .map(atividadesMapper::map) // Model -> DTO
+                .collect(Collectors.toList());
     }
 
-
-    //Listar Atividade por Id
-    public AtividadesModel listarAtividade(long id ){
-
+    // Listar atividade por Id (DTO)
+    public AtividadesDTO listarAtividade(long id) {
         Optional<AtividadesModel> atividadesPorId = atividadesRepository.findById(id);
-        return atividadesPorId.orElse(null);
+        return atividadesPorId.map(atividadesMapper::map).orElse(null);
     }
 
-    //Criar Nova atividade
-    public AtividadesModel  criarAtividade(AtividadesModel atividades){
-        return atividadesRepository.save(atividades);
+    // Criar nova atividade
+    public AtividadesDTO criarAtividade(AtividadesDTO atividadesDTO) {
+        AtividadesModel model = atividadesMapper.map(atividadesDTO); // DTO -> Model
+        AtividadesModel salvo = atividadesRepository.save(model);    // salvar no banco
+        return atividadesMapper.map(salvo);                           // Model -> DTO
     }
 
-    public void deletarAtividadePorId(long id){
+    // Deletar atividade por Id
+    public void deletarAtividadePorId(long id) {
         atividadesRepository.deleteById(id);
     }
-
-
-
-
-
-
-
-
 }
