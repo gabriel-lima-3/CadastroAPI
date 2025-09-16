@@ -1,52 +1,43 @@
 package dev.gway.CadastroAPI.Atividades;
 
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/atividades")
 public class AtividadesController {
 
-    private final AtividadesRepository atividadesRepository;
-    private AtividadesService atividadesService;
+    private final AtividadesService atividadesService;
 
-    public AtividadesController(AtividadesService atividadesService, AtividadesRepository atividadesRepository) {
+    public AtividadesController(AtividadesService atividadesService) {
         this.atividadesService = atividadesService;
-        this.atividadesRepository = atividadesRepository;
     }
-    //Crud
 
+    // Criar nova atividade
     @PostMapping("/criar")
-    public AtividadesModel criarAtividade(@RequestBody AtividadesModel atividades){
-        return atividadesService.criarAtividade(atividades);
-
+    public AtividadesDTO criarAtividade(@RequestBody AtividadesDTO atividadesDTO) {
+        return atividadesService.criarAtividade(atividadesDTO);
     }
 
-    //Listar todas as atividades
-
+    // Listar todas as atividades
     @GetMapping("/listar")
-    public List<AtividadesModel> listarAtividades(){
+    public List<AtividadesDTO> listarAtividades() {
         return atividadesService.listarAtividades();
     }
 
-    //Listar atividade por ID
-
+    // Listar atividade por ID
     @GetMapping("/listar/{id}")
-    public AtividadesModel listarAtividadesPorId(@PathVariable long id ){
+    public AtividadesDTO listarAtividadePorId(@PathVariable long id) {
         return atividadesService.listarAtividade(id);
-
     }
 
-    // TODO: Alterar dados
-    // TODO: Alterar dados
-    // TODO: Alterar dados
+    // TODO: Alterar dados de atividade
+    // @PutMapping("/alterar/{id}")
+    // public AtividadesDTO alterarAtividade(@PathVariable long id, @RequestBody AtividadesDTO atividadesDTO) { ... }
 
-    //Deletar atividade por id
+    // Deletar atividade por ID
     @DeleteMapping("/deletar/{id}")
-    public void deletarAtividade(@PathVariable long id){
+    public void deletarAtividade(@PathVariable long id) {
         atividadesService.deletarAtividadePorId(id);
     }
-
 }

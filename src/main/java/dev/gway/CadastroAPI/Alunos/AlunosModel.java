@@ -36,9 +36,14 @@ public class AlunosModel {
     @Column(name = "imagem_url")
     private String imagemUrl;
 
+    @Column(name = "semestre")
+    private String semestre;
+
     // Muitos para um (uma atividade para varios alunos)
     @ManyToOne
     @JoinColumn(name = "Atividades_id") // Foreing Key OU chave estrangeira
     private AtividadesModel atividades;
+
+
 
 }
