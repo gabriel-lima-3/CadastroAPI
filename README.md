@@ -22,7 +22,7 @@ Foram utilizadas **mensagens personalizadas** com `ResponseEntity` para fornecer
 - Java 17  
 - Spring Boot  
 - Spring Data JPA
-- Loombok
+- Lombok
 - H2 Database (banco em memória)  
 - Maven  
 - Postman (para testes)  
@@ -39,10 +39,16 @@ Foram utilizadas **mensagens personalizadas** com `ResponseEntity` para fornecer
 
 ## 📁 Estrutura do projeto
 
-``` controller # Rotas e endpoints (AlunosController, AtividadesController)```
-```dto # Objetos de transferência de dados```
-``` mapper # Conversão DTO <-> Model```
-```model # Entidades do banco de dados (Aluno, Atividade)```
-```repository # Interface de acesso ao banco```
-``` service # Regras de negócio```
-```application.properties # Configurações do Spring Boot```
+├── controller # Rotas e endpoints (AlunosController, AtividadesController)
+├── dto # Objetos de transferência de dados
+├── mapper # Conversão DTO <-> Model
+├── model # Entidades do banco de dados (Aluno, Atividade)
+├── repository # Interface de acesso ao banco
+├── service # Regras de negócio
+└── application.properties # Configurações do Spring Boot
+
+
+📬 Contato
+Desenvolvido por Gabriel Lima (G)
+GitHub: gway-dev
+LinkedIn: 
