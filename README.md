@@ -25,7 +25,8 @@ Foram utilizadas **mensagens personalizadas** com `ResponseEntity` para fornecer
 - Lombok
 - H2 Database (banco em memória)  
 - Maven  
-- Postman (para testes)  
+- Postman (para testes)
+- Flyway (controle de migrações do banco de dados)
 
 ---
 
@@ -52,8 +53,9 @@ Foram utilizadas **mensagens personalizadas** com `ResponseEntity` para fornecer
 
 Desenvolvido por Gabriel Lima (G)
 
-GitHub: gway-dev
+GitHub: gabriel-lima-3
 
-LinkedIn: 
+LinkedIn: https://www.linkedin.com/in/gabriel-lima-230897242/
+
 
 
