@@ -48,11 +48,12 @@ Foram utilizadas **mensagens personalizadas** com `ResponseEntity` para fornecer
 └── application.properties # Configurações do Spring Boot
 
 
-📬 Contato
+## 📬 Contato
 
 Desenvolvido por Gabriel Lima (G)
 
 GitHub: gway-dev
 
 LinkedIn: 
+
 
